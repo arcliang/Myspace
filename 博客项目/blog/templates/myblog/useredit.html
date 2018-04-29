@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发表博文</title>
+</head>
+<body>
+    <h1>创作我的文章</h1>
+    <form action="/useredit/" method="post">
+        <p>题目：<input type="text" name="title"></p>
+        <p>正文:</p>
+        <p><textarea rows="10" cols="100" name="body"></textarea></p>
+        <p>分类：  <select name="category">
+                {% for each in category%}
+                    <option>{{each.name}}</option>
+                {% endfor%}
+                </select></p>
+        <p>标签： <select name="tags">
+                {% for each in tags%}
+                    <option>{{each.name}}</option>
+                {% endfor%}
+                </select></p>
+        <p><input type="submit" value="提交"></p>
+    </form>
+</body>
+</html>

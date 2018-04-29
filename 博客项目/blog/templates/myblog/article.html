@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客文章列表</title>
+</head>
+<body>
+    <h1>版块：{{category}}</h1>
+    {% if username == None %}
+        <a href="/showlogin/">前往登录</a>
+    {% else %}
+        <h5>欢迎:{{username}}</h5>
+        <a href="/showuseredit/">发布博客</a>
+        <a href="/logout/">退出登录</a>
+    {% endif %}
+
+
+
+    {% for each in article %}
+        <li><a href="/articledetail/{{each.id}}/">{{each.title}}</a></li>
+    {% endfor %}
+
+</body>
+</html>

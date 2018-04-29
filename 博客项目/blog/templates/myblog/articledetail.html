@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客详细内容</title>
+</head>
+<body>
+    <h1>{{article_detail.title}}</h1>
+    {% if username == None%}
+        <a href="/showlogin/">前往登录</a>
+    {% else %}
+        <h5>欢迎:{{username}}</h5>
+        <a href="/showuseredit/">发布博客</a>
+        <a href="/logout/">退出登录</a>
+    {% endif %}
+
+
+
+    <h5>正文内容：{{article_detail.body}}</h5>
+    <h5>创建时间：{{article_detail.date}}</h5>
+    <h5>文章类型：{{article_category}}</h5>
+    <h5>标签：{{article_detail.tags}}</h5>
+</body>
+</html>
